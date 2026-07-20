@@ -8,14 +8,13 @@ app = Flask(__name__)
 # DATABASE CONNECTION
 # ------------------------------------
 
-db = mysql.connector.connect(
-    host="mysql.railway.internal",
-    port=int("3306"),
+conn = mysql.connector.connect(
+    host="tokaido.proxy.rlwy.net",
+    port=17593,
     user="root",
-    password="PHLxNnqEHsdvOmMJZrqTwewDkgZwPUEB",
+    password="YOUR_RAILWAY_PASSWORD",
     database="railway"
 )
-
 cursor = db.cursor(dictionary=True)
 
 # ------------------------------------
