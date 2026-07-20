@@ -224,9 +224,7 @@ def book_slot():
 
     slot = cursor.fetchone()
 
-    if slot["type"] != vehicleType:
-        return f"This slot is only for {slot['type']}."
-
+    vehicleType = request.form["vehicleType"]
     # -----------------------------
     # Booking
     # -----------------------------
