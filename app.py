@@ -10,6 +10,7 @@ app = Flask(__name__)
 
 db = mysql.connector.connect(
     host="mysql.railway.internal",
+    port=int("3306"),
     user="root",
     password="PHLxNnqEHsdvOmMJZrqTwewDkgZwPUEB",
     database="railway"
