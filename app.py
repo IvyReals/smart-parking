@@ -31,38 +31,41 @@ def home():
 
 @app.route("/dashboard")
 def dashboard():
+    try:
+        cursor.execute("SELECT COUNT(*) total FROM user")
+        users = cursor.fetchone()["total"]
 
-    cursor.execute("SELECT COUNT(*) total FROM user")
-    users = cursor.fetchone()["total"]
+        cursor.execute("SELECT COUNT(*) total FROM vehicle")
+        vehicles = cursor.fetchone()["total"]
 
-    cursor.execute("SELECT COUNT(*) total FROM vehicle")
-    vehicles = cursor.fetchone()["total"]
+        cursor.execute("SELECT COUNT(*) total FROM parking_slot")
+        slots = cursor.fetchone()["total"]
 
-    cursor.execute("SELECT COUNT(*) total FROM parking_slot")
-    slots = cursor.fetchone()["total"]
+        cursor.execute("""
+            SELECT COUNT(*) total
+            FROM booking
+            WHERE bookingStatus='Active'
+        """)
+        bookings = cursor.fetchone()["total"]
 
-    cursor.execute("""
-        SELECT COUNT(*) total
-        FROM booking
-        WHERE bookingStatus='Active'
-    """)
-    bookings = cursor.fetchone()["total"]
+        cursor.execute("""
+            SELECT IFNULL(SUM(amount),0) revenue
+            FROM payment
+            WHERE paymentStatus='Paid'
+        """)
+        revenue = cursor.fetchone()["revenue"]
 
-    cursor.execute("""
-        SELECT IFNULL(SUM(amount),0) revenue
-        FROM payment
-        WHERE paymentStatus='Paid'
-    """)
-    revenue = cursor.fetchone()["revenue"]
+        return render_template(
+            "dashboard.html",
+            users=users,
+            vehicles=vehicles,
+            slots=slots,
+            bookings=bookings,
+            revenue=revenue
+        )
 
-    return render_template(
-        "dashboard.html",
-        users=users,
-        vehicles=vehicles,
-        slots=slots,
-        bookings=bookings,
-        revenue=revenue
-    )
+    except Exception as e:
+        return str(e)
 
 # ------------------------------------
 # USERS
