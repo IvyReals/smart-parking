@@ -9,10 +9,10 @@ app = Flask(__name__)
 # ------------------------------------
 
 db = mysql.connector.connect(
-    host="localhost",
+    host="mysql.railway.internal",
     user="root",
-    password="root",
-    database="smart_parking"
+    password="PHLxNnqEHsdvOmMJZrqTwewDkgZwPUEB",
+    database="railway"
 )
 
 cursor = db.cursor(dictionary=True)
