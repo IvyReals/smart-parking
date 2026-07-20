@@ -8,7 +8,7 @@ app = Flask(__name__)
 # DATABASE CONNECTION
 # ------------------------------------
 
-conn = mysql.connector.connect(
+db = mysql.connector.connect(
     host="tokaido.proxy.rlwy.net",
     port=17593,
     user="root",
