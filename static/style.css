@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#08111f;
+    color:#fff;
+    min-height:100vh;
+    padding:30px;
+}
+
+/* Background Glow */
+
+body::before{
+    content:'';
+    position:fixed;
+    top:-250px;
+    left:-250px;
+    width:600px;
+    height:600px;
+    background:#009dff;
+    filter:blur(180px);
+    opacity:.25;
+    z-index:-1;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    bottom:-250px;
+    right:-250px;
+    width:600px;
+    height:600px;
+    background:#00d4ff;
+    filter:blur(180px);
+    opacity:.18;
+    z-index:-1;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:35px;
+    font-size:40px;
+    color:#00d4ff;
+    text-shadow:0 0 20px #00d4ff;
+}
+
+/* Cards */
+
+.container{
+    width:90%;
+    margin:auto;
+}
+
+.card{
+    display:inline-block;
+    width:260px;
+    padding:25px;
+    margin:20px;
+    text-align:center;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    border-radius:18px;
+
+    backdrop-filter:blur(15px);
+
+    transition:.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 0 15px #00d4ff,
+    0 0 40px #009dff;
+
+}
+
+/* Inputs */
+
+input,select{
+
+    width:100%;
+    padding:14px;
+    margin:12px 0;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#111d33;
+
+    color:white;
+
+    font-size:15px;
+
+    outline:none;
+
+}
+
+input:focus{
+
+    box-shadow:0 0 15px #00d4ff;
+
+}
+
+/* Buttons */
+
+button,a{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    border:none;
+
+    padding:12px 25px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    background:linear-gradient(90deg,#00c6ff,#0072ff);
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+button:hover,a:hover{
+
+    box-shadow:
+    0 0 15px #00d4ff,
+    0 0 30px #00d4ff;
+
+    transform:scale(1.05);
+
+}
+
+/* Forms */
+
+form{
+
+    width:420px;
+
+    margin:25px auto;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.1);
+
+}
+
+/* Tables */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:40px;
+
+    overflow:hidden;
+
+    border-radius:15px;
+
+    background:#111d33;
+
+}
+
+th{
+
+    background:#00d4ff;
+
+    color:#08111f;
+
+    padding:15px;
+
+    font-size:15px;
+
+}
+
+td{
+
+    padding:15px;
+
+    border-bottom:1px solid #1d3358;
+
+    text-align:center;
+
+}
+
+tr:hover{
+
+    background:#16284a;
+
+}
+
+/* Status */
+
+.available,
+.paid{
+
+    color:#00ff99;
+    font-weight:bold;
+
+}
+
+.pending,
+.occupied{
+
+    color:#ff6b6b;
+    font-weight:bold;
+
+}
+
+.back{
+
+    text-align:center;
+    margin-top:30px;
+
+}

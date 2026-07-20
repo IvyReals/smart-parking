@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Smart Parking Management</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+.hero{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+min-height:100vh;
+
+padding:70px;
+
+}
+
+.left{
+
+width:55%;
+
+}
+
+.left h1{
+
+font-size:62px;
+
+margin-bottom:20px;
+
+}
+
+.left h2{
+
+font-size:30px;
+
+color:#00d4ff;
+
+margin-bottom:25px;
+
+}
+
+.left p{
+
+font-size:18px;
+
+line-height:32px;
+
+color:#c7d8f8;
+
+margin-bottom:30px;
+
+}
+
+.features{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:18px;
+
+margin-top:30px;
+
+}
+
+.feature{
+
+padding:18px;
+
+border-radius:15px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+}
+
+.feature h3{
+
+color:#00d4ff;
+
+margin-bottom:8px;
+
+}
+
+.right{
+
+width:400px;
+
+}
+
+.login-box{
+
+padding:35px;
+
+background:rgba(255,255,255,.05);
+
+border-radius:20px;
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.1);
+
+box-shadow:0 0 35px rgba(0,212,255,.25);
+
+}
+
+.login-box h2{
+
+text-align:center;
+
+margin-bottom:25px;
+
+color:#00d4ff;
+
+}
+
+.stats{
+
+display:flex;
+
+gap:20px;
+
+margin-top:40px;
+
+}
+
+.stat{
+
+flex:1;
+
+padding:20px;
+
+text-align:center;
+
+border-radius:15px;
+
+background:rgba(255,255,255,.05);
+
+}
+
+.stat h1{
+
+font-size:38px;
+
+margin:0;
+
+}
+
+.stat p{
+
+margin-top:8px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="hero">
+
+<div class="left">
+
+<h1>🚗 Smart Parking</h1>
+
+<h2>Park Smarter. Save Time.</h2>
+
+<p>
+
+Our Smart Parking Management System allows users to locate available parking
+spaces in real time, reserve them instantly, make secure online payments,
+and manage vehicles efficiently.
+
+</p>
+
+<div class="features">
+
+<div class="feature">
+
+<h3>🅿 Live Slot Availability</h3>
+
+View parking slots in real time.
+
+</div>
+
+<div class="feature">
+
+<h3>📅 Instant Booking</h3>
+
+Reserve a parking slot within seconds.
+
+</div>
+
+<div class="feature">
+
+<h3>💳 QR Payments</h3>
+
+Secure UPI payment integration.
+
+</div>
+
+<div class="feature">
+
+<h3>📊 Smart Dashboard</h3>
+
+Track bookings, vehicles and payments.
+
+</div>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+
+<h1>250+</h1>
+
+<p>Registered Users</p>
+
+</div>
+
+<div class="stat">
+
+<h1>80+</h1>
+
+<p>Parking Slots</p>
+
+</div>
+
+<div class="stat">
+
+<h1>24/7</h1>
+
+<p>Availability</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="right">
+
+<div class="login-box">
+
+<h2>Login</h2>
+
+<form action="/dashboard">
+
+<input
+type="text"
+placeholder="Username"
+required>
+
+<input
+type="password"
+placeholder="Password"
+required>
+
+<button
+style="width:100%;margin-top:10px;">
+Login
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

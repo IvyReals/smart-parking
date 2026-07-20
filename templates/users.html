@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Users - Smart Parking System</title>
+
+
+</head>
+
+<body>
+
+<h1>Users Management</h1>
+
+<form action="/add_user" method="POST">
+
+    <input
+    type="text"
+    name="name"
+    placeholder="Enter Name"
+    required>
+
+    <input
+    type="email"
+    name="email"
+    placeholder="Enter Email"
+    required>
+
+    <input
+    type="text"
+    name="phone"
+    placeholder="Enter Phone Number"
+    required>
+
+    <input
+    type="password"
+    name="password"
+    placeholder="Enter Password"
+    required>
+
+    <button type="submit">
+        Add User
+    </button>
+
+</form>
+
+<table>
+
+<tr>
+    <th>User ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+</tr>
+
+{% for user in users %}
+
+<tr>
+
+<td>{{ user.userID }}</td>
+<td>{{ user.name }}</td>
+<td>{{ user.email }}</td>
+<td>{{ user.phone }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br><br>
+
+<a href="/dashboard">Back to Dashboard</a>
+
+</body>
+</html>

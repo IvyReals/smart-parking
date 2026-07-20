@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Payments</title>
+
+   
+
+</head>
+
+<body>
+
+<h1>Payment Details</h1>
+
+<table>
+
+<tr>
+    <th>Payment ID</th>
+    <th>Booking ID</th>
+    <th>Amount</th>
+    <th>Method</th>
+    <th>Status</th>
+    <th>Timestamp</th>
+</tr>
+
+{% for payment in payments %}
+
+<tr>
+
+<td>{{ payment.paymentID }}</td>
+<td>{{ payment.bookingID }}</td>
+<td>₹{{ payment.amount }}</td>
+<td>{{ payment.method }}</td>
+
+<td>
+
+{% if payment.paymentStatus == "Paid" %}
+<span class="paid">{{ payment.paymentStatus }}</span>
+{% else %}
+<span class="pending">{{ payment.paymentStatus }}</span>
+{% endif %}
+
+</td>
+
+<td>{{ payment.timestamp }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<div class="back">
+    <br>
+    <a href="/dashboard">Back to Dashboard</a>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Vehicle Management</title>
+
+    
+
+</head>
+
+<body>
+
+<h1>Vehicle Management</h1>
+
+<form action="/add_vehicle" method="POST">
+
+    <input
+        type="text"
+        name="vehicleNo"
+        placeholder="Vehicle Number"
+        required>
+
+    <input
+        type="number"
+        name="userID"
+        placeholder="User ID"
+        required>
+
+    <select name="vehicleType">
+        <option>Car</option>
+        <option>Bike</option>
+        <option>SUV</option>
+        <option>Truck</option>
+    </select>
+
+    <input
+        type="text"
+        name="model"
+        placeholder="Vehicle Model"
+        required>
+
+    <input
+        type="text"
+        name="color"
+        placeholder="Vehicle Color"
+        required>
+
+    <button type="submit">
+        Add Vehicle
+    </button>
+
+</form>
+
+<table>
+
+<tr>
+    <th>Vehicle No</th>
+    <th>Owner</th>
+    <th>Vehicle Type</th>
+    <th>Model</th>
+    <th>Color</th>
+</tr>
+
+{% for vehicle in vehicles %}
+
+<tr>
+
+<td>{{ vehicle.vehicleNo }}</td>
+<td>{{ vehicle.name }}</td>
+<td>{{ vehicle.vehicleType }}</td>
+<td>{{ vehicle.model }}</td>
+<td>{{ vehicle.color }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br><br>
+
+<a href="/dashboard">Back to Dashboard</a>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Bookings</title>
+
+  
+
+</head>
+
+<body>
+
+<h1>Booking Details</h1>
+
+<table>
+
+<tr>
+    <th>Booking ID</th>
+    <th>Vehicle No</th>
+    <th>Parking Slot</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th>Status</th>
+</tr>
+
+{% for booking in bookings %}
+
+<tr>
+
+<td>{{ booking.bookingID }}</td>
+<td>{{ booking.vehicleNo }}</td>
+<td>{{ booking.slotLabel }}</td>
+<td>{{ booking.startTime }}</td>
+<td>{{ booking.endTime }}</td>
+<td>{{ booking.bookingStatus }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<div class="back">
+<a href="/dashboard">Back to Dashboard</a>
+</div>
+
+</body>
+</html>
