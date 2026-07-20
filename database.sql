@@ -1,5 +1,5 @@
-CREATE DATABASE smart_parking;
-USE smart_parking;
+CREATE DATABASE IF NOT EXISTS railway;
+USE railway;
 CREATE TABLE user (
  userID INT AUTO_INCREMENT PRIMARY KEY,
  name VARCHAR(100) NOT NULL,
