@@ -12,7 +12,7 @@ conn = mysql.connector.connect(
     host="tokaido.proxy.rlwy.net",
     port=17593,
     user="root",
-    password="YOUR_RAILWAY_PASSWORD",
+    password="PHLxNnqEHsdvOmMJZrqTwewDkgZwPUEB",
     database="railway"
 )
 cursor = db.cursor(dictionary=True)
